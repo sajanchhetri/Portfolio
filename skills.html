@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Skills</title>
+  <style>
+    /* styles.css */
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative; /* Added for button positioning */
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .back-button:hover {
+      background-color: darkred;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      color: white;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Adjusted for larger circles */
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .skill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .progress-circle {
+      position: relative;
+      width: 120px; /* Increased size */
+      height: 120px; /* Increased size */
+    }
+
+    .circular-chart {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .circle-bg {
+      fill: none;
+      stroke: #333;
+      stroke-width: 3;
+    }
+
+    .circle {
+      fill: none;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke: red; /* Red color for the progress bar */
+      animation: progress 1s ease-out forwards;
+      /* Reduced glow effect */
+      filter: drop-shadow(0 0 2px rgba(255, 0, 0, 0.5));
+    }
+
+    @keyframes progress {
+      0% {
+        stroke-dasharray: 0 100;
+      }
+    }
+
+    .skill-percent {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .skill-name {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .progress-circle {
+        width: 100px; /* Adjusted for smaller screens */
+        height: 100px;
+      }
+
+      .skill-percent {
+        font-size: 1rem;
+      }
+
+      .skill-name {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .progress-circle {
+        width: 80px; /* Adjusted for smaller screens */
+        height: 80px;
+      }
+
+      .skill-percent {
+        font-size: 0.9rem;
+      }
+
+      .skill-name {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="back-button" onclick="window.location.href='index.html'">Back</button>
+  <div class="container">
+    <h1>My Skills</h1>
+    <div class="skills-grid">
+      <div class="skill">
+        <div class="progress-circle" data-percent="40">
+          <svg viewBox="0 0 36 36" class="circular-chart">
+            <path class="circle-bg"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            />
+            <path class="circle"
+              stroke-dasharray="40, 100"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            />
+          </svg>
+          <span class="skill-percent">40%</span>
+        </div>
+        <span class="skill-name">HTML & CSS</span>
+      </div>
+      <div class="skill">
+        <div class="progress-circle" data-percent="45">
+          <svg viewBox="0 0 36 36" class="circular-chart">
+            <path class="circle-bg"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            />
+            <path class="circle"
+              stroke-dasharray="45, 100"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            />
+          </svg>
+          <span class="skill-percent">45%</span>
+        </div>
+        <span class="skill-name">Photoshop</span>
+      </div>
+      <div class="skill">
+        <div class="progress-circle" data-percent="45">
+          <svg viewBox="0 0 36 36" class="circular-chart">
+            <path class="circle-bg"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            />
+            <path class="circle"
+              stroke-dasharray="45, 100"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            />
+          </svg>
+          <span class="skill-percent">45%</span>
+        </div>
+        <span class="skill-name">CorelDraw</span>
+      </div>
+      <div class="skill">
+        <div class="progress-circle" data-percent="25">
+          <svg viewBox="0 0 36 36" class="circular-chart">
+            <path class="circle-bg"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            />
+            <path class="circle"
+              stroke-dasharray="25, 100"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            />
+          </svg>
+          <span class="skill-percent">25%</span>
+        </div>
+        <span class="skill-name">Automobile</span>
+      </div>
+      <div class="skill">
+        <div class="progress-circle" data-percent="50">
+          <svg viewBox="0 0 36 36" class="circular-chart">
+            <path class="circle-bg"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            />
+            <path class="circle"
+              stroke-dasharray="50, 100"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            />
+          </svg>
+          <span class="skill-percent">50%</span>
+        </div>
+        <span class="skill-name">Electrical</span>
+      </div>
+      <div class="skill">
+        <div class="progress-circle" data-percent="50">
+          <svg viewBox="0 0 36 36" class="circular-chart">
+            <path class="circle-bg"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            />
+            <path class="circle"
+              stroke-dasharray="50, 100"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            />
+          </svg>
+          <span class="skill-percent">50%</span>
+        </div>
+        <span class="skill-name">Bash</span>
+      </div>
+      <div class="skill">
+        <div class="progress-circle" data-percent="20">
+          <svg viewBox="0 0 36 36" class="circular-chart">
+            <path class="circle-bg"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            />
+            <path class="circle"
+              stroke-dasharray="20, 100"
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+            />
+          </svg>
+          <span class="skill-percent">20%</span>
+        </div>
+        <span class="skill-name">Cyber Security</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
